@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import numpy as np
 
-with open  ('C:/Users/91703/Downloads/logreg_pickle', 'rb') as file:
+with open  ('logreg_pickle', 'rb') as file:
     model = pickle.load(file)
 
 
