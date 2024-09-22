@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import numpy as np
 
-with open  ('logreg_pickle', 'rb') as file:
+with open  ('C:/Users/91703/Downloads/logreg_pickle', 'rb') as file:
     model = pickle.load(file)
 
 
@@ -24,9 +24,18 @@ oldpeak = st.number_input("Oldpeak", min_value=0.0, max_value=10.0, value=1.0)
 slp = st.selectbox("Slope of the Peak Exercise ST Segment (0-2)", options=[0, 1, 2])
 caa = st.number_input("Number of Major Vessels (0-4)", min_value=0, max_value=4, value=0)
 thall = st.selectbox("Thalassemia (1-3)", options=[1, 2, 3])
+feature_14= caa
+feature_15=cp
+feature_16=cp
+feature_17=caa
+feature_18=caa
+feature_19=thall
+feature_20=thall
+feature_21=restecg
+feature_22=slp
 
 # Prepare the input data for prediction
-input_data = np.array([[age, sex, cp, trtbps, chol, fbs, restecg, thalachh, exng, oldpeak, slp, caa, thall]])
+input_data = np.array([[age, sex, cp, trtbps, chol, fbs, restecg, thalachh, exng, oldpeak, slp, caa, thall,feature_14,feature_15,feature_16,feature_17,feature_18,feature_19,feature_20,feature_21,feature_22]])
 
 # Make the prediction
 if st.button("Predict"):
