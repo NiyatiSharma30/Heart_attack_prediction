@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+import streamlit as st
 import pickle
 import numpy as np
 
-app = FastAPI()
+
 
 with open  ('logreg_pickle', 'rb') as file:
     model = pickle.load(file)
